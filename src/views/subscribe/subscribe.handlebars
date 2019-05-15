@@ -1,0 +1,117 @@
+<div id="alerts"></div>
+<div class="card text-center" id="hero">
+	<h1 class="display-1 m-0">Reddit Pull</h1>
+	<h4 class="mb-4 text-info">A better way to browse images from reddit</h4>
+</div>
+<div id="pricing" class="container mb-5">
+	<div class="row pb-5">
+		<div class="col-md-4 p-3 py-md-0">
+			<div class="card p-0 border-secondary">
+				<h3 class="card-header text-center bg-secondary">Standard</h3>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">
+						<strong>Requests:</strong> 20 / hour
+					</li>
+					<li class="list-group-item">
+						Create subreddit groups.
+					</li>
+				</ul>
+				<div class="card-body">
+					<h3 class="text-center">Free</h3>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 p-3 py-md-0">
+			<div class="card p-0 border-info">
+				<h3 class="card-header text-center bg-info">Supporter</h3>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">
+						<strong>Requests:</strong> 200 / hour
+					</li>
+					<li class="list-group-item">
+						Access to all <strong>Standard</strong> features.
+					</li>
+					<li class="list-group-item">
+						Save your subreddit <a href="#" class="text-info">groups</a>.
+					</li>
+					<li class="list-group-item">
+						Remove ads!
+					</li>
+					<li class="list-group-item">
+						Browse your home feed.
+					</li>
+					<li class="list-group-item">
+						<strong>Exclusive</strong> supporter flair.
+					</li>
+					<li class="list-group-item">
+						Help support the development of additional features.
+					</li>
+				</ul>
+				<div class="card-body">
+					<p class="mb-3 lead text-center">
+						<strong>$1.99</strong> / Month
+					</p>
+					<form action="/subscribe/supporter" method="POST">
+		        <script
+		          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+		          data-key="{{stripePublishableKey}}"
+		          data-amount="199"
+		          data-name="Reddit Pull"
+		          data-description="Supporter level subscription."
+		          data-locale="auto">
+		        </script>
+		        <button type="submit" class="btn btn-info btn-lg btn-block">Unlock</button>
+		      </form>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 p-3 py-md-0">
+			<div class="card p-0 border-success">
+				<h3 class="card-header text-center bg-success">Premium</h3>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">
+						<strong>Requests:</strong> Unlimited
+					</li>
+					<li class="list-group-item">
+						Access to all <strong>Supporter</strong> features.
+					</li>
+					<li class="list-group-item">
+						<strong>Exclusive Premium</strong> supporter flair.
+					</li>
+					<li class="list-group-item">
+						Help support the development of additional features.
+					</li>
+					<li class="list-group-item">
+						Group multi-subs with regular subs.
+					</li>
+					<li class="list-group-item">
+						Access to slack chat with the developers.
+					</li>
+					<li class="list-group-item">
+						Early access to new features.
+					</li>
+					<li class="list-group-item">
+						On-site (embedded) gifs and videos.
+					</li>
+					<li class="list-group-item">
+						On-site comments.
+					</li>
+				</ul>
+				<div class="card-body">
+					<p class="mb-3 lead text-center"><strong>$9.99</strong> / Month</p>
+					<form action="/subscribe/premium" method="POST">
+		        <script
+		          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+		          data-key="{{stripePublishableKey}}"
+		          data-amount="999"
+		          data-name="Reddit Pull"
+		          data-description="Premium level subscription."
+		          data-locale="auto">
+		        </script>
+		        <button type="submit" class="btn btn-success btn-lg btn-block">Unlock</button>
+		      </form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

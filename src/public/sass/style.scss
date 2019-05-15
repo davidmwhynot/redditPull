@@ -1,0 +1,388 @@
+/*
+
+	title: style.scss
+	desc: Main stylesheet for redditpull app
+	author: David Whynot
+	email: davidmwhynot@gmail.com
+	Project: redditpull
+	Created: 9/1/18
+	Updated: 10/7/18
+
+*/
+
+// html, body {
+// 	// hide scrollbar
+// 	-ms-overflow-style: none; // IE 10+
+// 	overflow: -moz-scrollbars-none; // Firefox
+// }
+// html::-webkit-scrollbar {
+// 	display: none; // Safari and Chrome
+// }
+// body::-webkit-scrollbar {
+// 	display: none; // Safari and Chrome
+// }
+
+
+#pricing {
+	#info-icon {
+		width: 25px;
+		height: 25px;
+	}
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.posts-grid {
+		.card {
+			width: calc(50% - 5px) !important;
+		}
+	}
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+	.posts-grid {
+		.card {
+			width: calc(33.3333333% - 6.6666667px) !important;
+		}
+	}
+}
+
+.posts-grid {
+	.card {
+		width: 100%;
+	}
+}
+
+
+.container {
+	margin-top: 50px;
+	// text-align: center;
+}
+
+.txt-card {
+	max-height: 500px !important;
+	overflow-y: auto;
+}
+
+.flash-msg {
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	animation: fadeIn 500ms;
+}
+
+#posts {
+	img {
+		width: 100% !important;
+		height: auto !important;
+		height: max-content;
+		display: block !important;
+	}
+}
+
+#alerts {
+	span {
+		display: inline-block;
+		margin-top: 1rem;
+		margin-bottom: 0;
+	}
+}
+
+#sub {
+	min-width: 125px;
+}
+
+#input {
+	margin: 0 auto;
+	max-width: 800px;
+}
+
+#submit {
+	margin-top: 1px;
+	height: 2.7578125rem;
+	font-size: 200%;
+	padding: 0;
+}
+
+#sort {
+	border-radius: 0;
+}
+#sort:hover {
+	cursor: pointer;
+}
+
+#hero {
+	h1 {
+		padding-top: 20px;
+	}
+	transition: max-height 1s ease-in-out;
+	height: auto;
+	max-height: 600px;
+	overflow: hidden;
+}
+
+#loading, #bottom {
+	width: 200px;
+	margin: 0 auto;
+}
+
+.gif-overlay {
+	img {
+		filter: none;
+		transition: 0.33s;
+	}
+}
+
+.gif-overlay:hover {
+	img {
+		filter: brightness(0.6) blur(2px);
+	}
+}
+
+
+@keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+
+
+.playbutton {
+	position: absolute;
+	top: 55%;
+	left: 55%;
+	transform: translate(-50%, -50%);
+	border: 0 !important;
+	background: transparent !important;
+	box-sizing: border-box !important;
+	width: 0 !important;
+	height: 74px !important;
+	border-color: transparent transparent transparent #202020 !important;
+	transition: 100ms all ease !important;
+	cursor: pointer !important;
+	// play state
+	border-style: solid !important;
+	border-width: 37px 0 37px 60px !important;
+
+	&:hover {
+		border-color: transparent transparent transparent #404040 !important;
+	}
+}
+
+.card-columns {
+	column-count: 1 !important;
+}
+@media (min-width: 900px) {
+  .card-columns {
+    column-count: 2 !important;
+  }
+}
+@media (min-width: 1400px) {
+  .card-columns {
+    column-count: 3 !important;
+  }
+}
+
+
+@keyframes lds-ellipsis3 {
+	0%,
+	25% {
+		left: 32px;
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+
+	50% {
+		left: 32px;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+
+	75% {
+		left: 100px;
+	}
+
+	100% {
+		left: 168px;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+@-webkit-keyframes lds-ellipsis3 {
+	0%,
+	25% {
+		left: 32px;
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+
+	50% {
+		left: 32px;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+
+	75% {
+		left: 100px;
+	}
+
+	100% {
+		left: 168px;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+@keyframes lds-ellipsis2 {
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+
+	100%,
+	25% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+}
+@-webkit-keyframes lds-ellipsis2 {
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+
+	100%,
+	25% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+}
+@keyframes lds-ellipsis {
+	0% {
+		left: 32px;
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+
+	25% {
+		left: 32px;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+
+	50% {
+		left: 100px;
+	}
+
+	75% {
+		left: 168px;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+
+	100% {
+		left: 168px;
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+}
+@-webkit-keyframes lds-ellipsis {
+	0% {
+		left: 32px;
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+
+	25% {
+		left: 32px;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+
+	50% {
+		left: 100px;
+	}
+
+	75% {
+		left: 168px;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+
+	100% {
+		left: 168px;
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+}
+
+.lds-ellipsis {
+	position: relative;
+}
+
+.lds-ellipsis > div {
+	position: absolute;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 40px;
+	height: 40px;
+}
+
+.lds-ellipsis div > div {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: #f00;
+	position: absolute;
+	top: 100px;
+	left: 32px;
+	-webkit-animation: lds-ellipsis 3s cubic-bezier(0, 0.5, 0.5, 1) infinite forwards;
+	animation: lds-ellipsis 3s cubic-bezier(0, 0.5, 0.5, 1) infinite forwards;
+}
+
+.lds-ellipsis div:nth-child(1) div {
+	-webkit-animation: lds-ellipsis2 3s cubic-bezier(0, 0.5, 0.5, 1) infinite forwards;
+	animation: lds-ellipsis2 3s cubic-bezier(0, 0.5, 0.5, 1) infinite forwards;
+	background: #3b4368;
+}
+
+.lds-ellipsis div:nth-child(2) div {
+	-webkit-animation-delay: -1.5s;
+	animation-delay: -1.5s;
+	background: #5e6fa3;
+}
+
+.lds-ellipsis div:nth-child(3) div {
+	-webkit-animation-delay: -0.75s;
+	animation-delay: -0.75s;
+	background: #689cc5;
+}
+
+.lds-ellipsis div:nth-child(4) div {
+	-webkit-animation-delay: 0s;
+	animation-delay: 0s;
+	background: #93dbe9;
+}
+
+.lds-ellipsis div:nth-child(5) div {
+	-webkit-animation: lds-ellipsis3 3s cubic-bezier(0, 0.5, 0.5, 1) infinite forwards;
+	animation: lds-ellipsis3 3s cubic-bezier(0, 0.5, 0.5, 1) infinite forwards;
+	background: #3b4368;
+}
+
+.lds-ellipsis {
+	width: 200px !important;
+	height: 200px !important;
+	-webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+	transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+}

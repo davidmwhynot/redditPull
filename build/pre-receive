@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "pre-receive"
+lastCommitHash=$(git rev-parse HEAD)
+cd /var/apps/redditpull
+echo "$lastCommitHash" > .lastCommitHash

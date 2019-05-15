@@ -1,0 +1,42 @@
+#!/bin/bash
+git --work-tree=/var/apps/redditpull --git-dir=/var/repo/redditpull.git checkout -f
+currentCommitHash=$(git rev-parse HEAD)
+lastCommitHash=$(cat /var/apps/redditpull/.lastCommitHash)
+re1="(package.json)|(package-lock.json)"
+re2="src\/db\/schemas\/.+"
+
+updateNodeModules() {
+	echo "updating node_modules..."
+	rm -rf node_modules
+	npm i
+}
+
+updateDatabase() {
+	echo "updating database..."
+	cd dist/db
+	ls
+	mysql --defaults-extra-file=.config < _config.sql
+	cd ../..
+}
+
+echo "changed files:"
+changes=$(git diff --name-only $lastCommitHash $currentCommitHash)
+echo "$changes"
+echo ""
+
+cd /var/apps/redditpull
+
+cp ./build/post-receive /var/repo/redditpull.git/hooks
+
+cp ./build/pre-receive /var/repo/redditpull.git/hooks
+
+rm -rf dist
+
+if [[ $changes =~ $re1 ]]; then updateNodeModules; fi
+
+gulp setup_prod
+
+if [[ $changes =~ $re2 ]]; then updateDatabase; fi
+
+# TODO: scaffold app id
+pm2 restart 0
